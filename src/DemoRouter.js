@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import CrudDemo from './CrudDemo';
+
 const DemoRouter = () => {
     return (
         <div className='container'>
@@ -10,6 +12,7 @@ const DemoRouter = () => {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/person" component={Person} />
                     <Route exact path="/about" component={About} />
+                    <Route exact path="/crud" component={CrudDemo} />
                     <Route exact path="" component={NotFound} />
                 </Switch>
             </Router>
@@ -22,7 +25,7 @@ const Header = () => {
         <nav className='navbar navbar-expand-sm bg-dark navbar-dark"'>
             <div className="container-fluid">
                 <ul className="nav me-auto">
-                    <li className="nav-item">
+                    <li className="nav-item d-flex align-items-center">
                         <Link className="navbar-brand text-white" to="/">React</Link>
                     </li>
                     <li className="nav-item">
@@ -34,18 +37,21 @@ const Header = () => {
                     <li className="nav-item">
                         <Link className="nav-link text-white" to="/about">About us</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to="/crud">CRUD</Link>
+                    </li>
                 </ul>
                 <button type='button' className='btn btn-primary '>Sign Up</button>
             </div>
-
         </nav>
+
     );
 }
 
 const Wellcome = () => {
     return (
         <div className='container'>
-            <h4>Welcome Component!</h4>
+            <h4>Welcome Component</h4>
         </div>
     );
 }
